@@ -1,0 +1,225 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+
+/* Root */ 
+:root {
+    --primary: hsl(215, 51%, 70%);
+    --blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+
+/* RESET CSS */ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+        text-decoration: none;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* END RESET CSS */
+
+
+/* TYPOGRAPHY */
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 400;
+}
+
+/* LAYOUT */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+    margin-bottom: 50px;
+    width: 100vw;
+    background-color: var(--main-bg);
+}
+
+
+/* CARD */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 16px;
+    width: 87.5%;
+    max-width: 375px;
+    background: var(--card-bg);
+    margin-top: 64px;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.img-coin {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card-img {
+    position: relative;
+}
+
+.img-coin:hover {
+    opacity: 0.75;
+}
+
+.card-view {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cyan);
+    opacity: 0;
+    border-radius: 8px;
+}
+
+.img-view {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-img:hover .card-view {
+    opacity: 0.5;
+}
+
+.card-img:hover .img-view {
+    display: block;
+}
+
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    padding-top: 8px;
+}
+
+.card-description {
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.75rem;
+}
+
+.card-value,
+.avatar {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.card-value {
+    justify-content: space-between;
+}
+
+.value-coin {
+    color: var(--cyan);
+}
+
+
+.value-coin,
+.value-days {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 8px;
+}
+
+
+.line {
+    border: 1px solid var(--line);
+}
+
+.avatar {
+    column-gap:16px;
+}
+
+.avatar > img {
+    width: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+}
+
+
+.avatar-name > span{
+    color: var(--white)
+}
+
+
+.card-title:hover,
+.avatar-name > span:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+footer img {
+    width: 50px;
+    filter: drop-shadow(0px 0px 15px var(--primary));
+}
